@@ -93,14 +93,14 @@ public class IdWorker {
         } else {
             sequence = 0L;
         }
-        lastTimestamp = timestamp;
-        // ID偏移组合生成最终的ID，并返回ID
-        long nextId = ((timestamp - twepoch) << timestampLeftShift)
-                | (datacenterId << datacenterIdShift)
-                | (workerId << workerIdShift) | sequence;
+    lastTimestamp = timestamp;
+    // ID偏移组合生成最终的ID，并返回ID
+    long nextId = ((timestamp - twepoch) << timestampLeftShift)
+            | (datacenterId << datacenterIdShift)
+            | (workerId << workerIdShift) | sequence;
 
         return nextId;
-    }
+}
 
     private long tilNextMillis(final long lastTimestamp) {
         long timestamp = this.timeGen();
